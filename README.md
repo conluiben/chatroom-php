@@ -12,9 +12,10 @@ Created in early 2020.
 - Node.js 16+
 - node modules (update as you go)
 - websocket support
+- Font Awesome (already included in repo)
   
 ## How to run (XAMPP setup)
-- clone repository to htdocs folder
+- clone repository to `htdocs` folder
 - run XAMPP and navigate to index.php
 - in a separate Windows terminal, run the `server.php` file
   ```
