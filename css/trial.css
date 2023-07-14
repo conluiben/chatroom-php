@@ -1,0 +1,61 @@
+*{
+	box-sizing: border-box;
+}
+p{
+	margin: 0;
+}
+img.imgDp{
+	width: 40px;
+}
+div.container{
+	max-height: 100vh; /* unsure */
+}
+div.divRcvdRow  div.msgBox{
+	background-color: #ffff66;
+}
+
+div.divSentRow  div.msgBox{
+	background-color: #ccdcff;
+}
+small{
+	font-size: 0.75em;
+	color: gray;
+	/* font-weight: lighter; */
+}
+small.msgName,small.msgTime{
+	font-style: italic;
+}
+
+label{
+	color: gray;
+	font-style: italic;
+}
+
+label > span.labelUname{
+	font-weight: bold;
+}
+
+div.msgBox{
+	max-width: 85%;
+}
+
+@media screen and (min-width: 576px) {
+	div.msgBox{
+		max-width: 70%;
+	}
+}
+@media screen and (min-width: 768px) {
+	div.msgBox{
+		max-width: 60%;
+	}
+}
+@media screen and (min-width: 992px) {
+	div.msgBox{
+		max-width: 50%;
+	}
+}
+@media (min-width: 1200px) {
+	div.msgBox{
+		max-width: 40%;
+	}
+}

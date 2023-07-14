@@ -1,0 +1,97 @@
+// cd C:\xampp\htdocs\conluiben\chat
+// sass --watch sass/signup.scss:css/signup.css
+// ALL: sass --watch sass/signup.scss:css/signup.css sass/login.scss:css/login.css sass/homepage.scss:css/homepage.css
+
+//essentials
+@import "bootstrap_setup";
+
+@mixin forScreenSize($inpSize){ //inpSize is 2-letter size
+	@if $inpSize==sm {
+		@media (min-width: 576px) { @content; }
+	}
+	@else if $inpSize==md {
+		@media (min-width: 768px) { @content; }
+	}
+	@else if $inpSize==lg {
+		@media (min-width: 992px) { @content; }
+	}
+	@else if $inpSize==xl {
+		@media (min-width: 1200px) { @content; }
+	}
+}
+
+div.container{
+	@extend .col-xl-6, .col-lg-8, .col-md-10, .col-sm-11, .col-12;
+	h1{
+		@extend .my-4;
+	}
+	input{
+		@extend .form-control;
+	}
+	label{
+		margin: 0;
+	}
+	div.form-group{
+		p.pInpInfo{
+			color: red;
+			font-size: 0.75rem;
+			margin: 3px 0 0 0;
+		}
+		input.inputGood{
+			border: solid 1px green;
+			&:focus{
+				box-shadow: 0 0 0 0.2rem rgba(0, 255, 0, 0.25);
+			}
+		}
+		input.inputBad{
+			border: solid 1px red;
+			&:focus{
+				box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25);
+			}
+		}
+	}
+	div#divInpIcon{
+		p.pInpInfo{
+			color: red;
+			font-size: 0.75rem;
+			margin: 0 0 10px 0;
+		}
+	
+		div#divIconList{
+			@extend .d-flex, .flex-wrap, .align-content-center;/*, .align-items-center;*/
+			
+			div.divIcon{
+				display: inline-block;
+				border: solid 5px;
+				border-color: rgb(0,0,255,0);
+				border-radius: 50%;
+				
+				width: 80px; //XS screens
+				margin: 3px;
+				
+				@include forScreenSize(md){
+					width: 90px;
+					margin: 5px;
+				}
+				
+				img{
+					width: 100%;
+				}
+				
+				&.inpSelected{ /* change to check mark overlay soon? */
+					border-color: rgb(0,0,255,1);
+				}
+			}
+		}
+	}
+	button#btnSignUp{}
+	p#pLoginLine{
+		span{
+			color: blue;
+			&:hover{
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}
+	}
+}

@@ -1,0 +1,115 @@
+<!-- revamped design of chatroom -->
+<!DOCTYPE html>
+<html>
+	<title> Trial UI </title>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="icon" href=""/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/> -->
+		<!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/> -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="../css/trial2.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<h1> Welcome, <b>username123</b> </h1>
+			<div class="divAllMsgsBox border">
+				<div class="divRcvdRow">
+					<img src="images/sample.jpg" class="imgDp"/>
+					<div class="divContent">
+						<div class="divMsgDetails">
+							<small class="msgName"> Anonymous </small>
+							<small class="msgTime"> (07:34 PM) </small>
+						</div>
+						<div class="divMsgBox">
+							<div class="msgText">
+								This is an example message. This is from the sender to the receiver.
+							</div>
+							<small class="timeText"> 07:34 PM </small>
+						</div>
+					</div>
+				</div>
+				<div class="divSentRow">
+					<img src="images/sample.jpg" class="imgDp"/>
+					<div class="divContent">
+						<div class="divMsgDetails">
+							<small class="msgName mx-1 order-0"> conluiben </small>
+							<small class="msgTime mx-1 order-1 d-block d-lg-none"> (07:35 PM) </small>
+						</div>
+						<div class="divMsgBox">
+							<div class="msgText">
+								This is an example message. This is from the sender to the receiver.
+							</div>
+							<small class="timeText"> 07:35 PM </small>
+						</div>
+					</div>
+				</div>
+				<div class="divRcvdRow">
+					<img src="images/sample.jpg" class="imgDp"/>
+					<div class="divContent">
+						<div class="divMsgDetails">
+							<small class="msgName"> Anonymous </small>
+							<small class="msgTime"> (08:19 PM) </small>
+						</div>
+						<div class="divMsgBox">
+							<div class="msgText">
+								This is an example reply. This is the start of a series of messages from the sender to the receiver. This is supposed to be a long message. Lorem ipsum...
+							</div>
+							<small class="timeText"> 08:19 PM </small>
+						</div>
+					</div>
+				</div>
+				<div class="divRcvdRow">
+					<img src="images/sample.jpg" class="imgDp"/>
+					<div class="divContent">
+						<div class="divMsgDetails">
+							<small class="msgName"> Anonymous </small>
+							<small class="msgTime"> (08:20 PM) </small>
+						</div>
+						<div class="divMsgBox">
+							<div class="msgText">
+								This is an example message. This is the second message in the series of messages. This is from the sender to the receiver.
+							</div>
+							<small class="timeText"> 08:20 PM </small>
+						</div>
+					</div>
+				</div>
+				<div class="divSentRow">
+					<img src="images/sample.jpg" class="imgDp"/>
+					<div class="divContent">
+						<div class="divMsgDetails">
+							<small class="msgName mx-1 order-0"> conluiben </small>
+							<small class="msgTime mx-1 order-1 d-block d-lg-none"> (09:59 PM) </small>
+						</div>
+						<div class="divMsgBox">
+							<div class="msgText">
+								Um ok, got it!
+							</div>
+							<small class="timeText"> 09:59 PM </small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="divInputArea"> <!-- input field -->
+				<label for="inpMsgField">Online as <span class="labelUname">username123</span></label>
+				<div class="divInputField">
+					<div class="divUnamePrepend">
+						<span> username123 </span>
+					</div>
+					<input type="text" id="inpMsgField" placeholder="Type your message here..."/>
+					<div class="divUnameAppend">
+						<button type="button">
+							<span> Send </span>
+							<i class="fa fa-paper-plane"></i>
+						</button>
+					</div>
+				</div>  
+			</div>
+		</div>
+	</body>
+</html>

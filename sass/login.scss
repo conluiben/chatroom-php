@@ -1,0 +1,62 @@
+// cd C:\xampp\htdocs\conluiben\chat
+// sass --watch sass/login.scss:css/login.css
+// @import "../node_modules/bootstrap/scss/bootstrap";
+
+@import "bootstrap_setup";
+
+@mixin forScreenSize($inpSize){ //inpSize is 2-letter size
+	@if $inpSize==sm {
+		@media (min-width: 576px) { @content; }
+	}
+	@else if $inpSize==md {
+		@media (min-width: 768px) { @content; }
+	}
+	@else if $inpSize==lg {
+		@media (min-width: 992px) { @content; }
+	}
+	@else if $inpSize==xl {
+		@media (min-width: 1200px) { @content; }
+	}
+}
+
+///////////////////////////
+//////////////////// ALL CUSTOM CSS STYLES
+
+div.container{ //main body
+	// @extend .my-lg-5, .my-md-4, .my-2, .text-center, .col-xl-6, .col-lg-8, .col-md-10, .col-sm-11, .col-12;
+	@extend .col-xl-6, .col-lg-8, .col-md-10, .col-sm-11, .col-12;
+	@extend .d-flex, .flex-column, .text-center, .justify-content-center; //somehow, didn't need align-items-center
+	height: 100vh; //default
+	max-height: -moz-available; //Mozilla-based
+	max-height: -webkit-fill-available; //mobile and webkit-based
+	div#divLoginArea{
+		h1{
+			@extend .mb-4;
+		}
+		div#divInpFields{
+			@extend .form-group, .align-middle;
+		}
+		p#pSignUpLine{
+			margin: 4rem auto 0.5rem;
+			font-size: 1rem;
+			span{
+				color: blue;
+				&:hover{
+					text-decoration: underline;
+					cursor: pointer;
+				}
+			}
+		}
+		input{
+			@extend .form-control;
+		}
+		button#btnSubmit{
+			@extend .btn, .btn-lg, .btn-success;
+		}
+		/*
+		button#btnSignUp{
+			@extend .btn, .btn-primary;
+		}
+		*/
+	}
+}

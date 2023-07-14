@@ -1,0 +1,98 @@
+//signup page
+//COPY THIS DIRECTORY WHEN UNCOMMENTING: "../node_modules/bootstrap/scss/"
+
+//essentials
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+//mixins --------------------
+
+// Toggles
+//
+// Used in conjunction with global variables to enable certain theme features.
+
+// Vendor
+@import "../node_modules/bootstrap/scss/vendor/rfs";
+
+// Deprecate
+@import "../node_modules/bootstrap/scss/mixins/deprecate";
+
+// Utilities
+@import "../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../node_modules/bootstrap/scss/mixins/hover";
+@import "../node_modules/bootstrap/scss/mixins/image";
+@import "../node_modules/bootstrap/scss/mixins/badge";
+@import "../node_modules/bootstrap/scss/mixins/resize";
+@import "../node_modules/bootstrap/scss/mixins/screen-reader";
+@import "../node_modules/bootstrap/scss/mixins/size";
+@import "../node_modules/bootstrap/scss/mixins/reset-text";
+@import "../node_modules/bootstrap/scss/mixins/text-emphasis";
+@import "../node_modules/bootstrap/scss/mixins/text-hide";
+@import "../node_modules/bootstrap/scss/mixins/text-truncate";
+@import "../node_modules/bootstrap/scss/mixins/visibility";
+
+// Components
+// @import "mixins/alert";
+@import "../node_modules/bootstrap/scss/mixins/buttons";
+// @import "mixins/caret";
+// @import "mixins/pagination";
+@import "../node_modules/bootstrap/scss/mixins/lists";
+@import "../node_modules/bootstrap/scss/mixins/list-group";
+// @import "mixins/nav-divider";
+@import "../node_modules/bootstrap/scss/mixins/forms";
+// @import "mixins/table-row";
+
+// Skins
+@import "../node_modules/bootstrap/scss/mixins/background-variant";
+@import "../node_modules/bootstrap/scss/mixins/border-radius";
+@import "../node_modules/bootstrap/scss/mixins/box-shadow";
+@import "../node_modules/bootstrap/scss/mixins/gradients";
+@import "../node_modules/bootstrap/scss/mixins/transition";
+
+// Layout
+@import "../node_modules/bootstrap/scss/mixins/clearfix";
+@import "../node_modules/bootstrap/scss/mixins/grid-framework";
+@import "../node_modules/bootstrap/scss/mixins/grid";
+@import "../node_modules/bootstrap/scss/mixins/float";
+
+
+//////// --------------------
+
+//specific components --------------------
+
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+// @import "code";
+@import "../node_modules/bootstrap/scss/grid";
+// @import "tables";
+@import "../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/buttons";
+// @import "../node_modules/bootstrap/scss/transitions";
+// @import "dropdown";
+// @import "button-group";
+@import "../node_modules/bootstrap/scss/input-group";
+@import "../node_modules/bootstrap/scss/custom-forms";
+// @import "nav";
+// @import "navbar";
+// @import "card";
+// @import "breadcrumb";
+// @import "pagination";
+// @import "badge";
+// @import "jumbotron";
+// @import "alert";
+// @import "progress";
+// @import "media";
+// @import "list-group";
+// @import "close";
+// @import "toasts";
+// @import "modal";
+// @import "tooltip";
+// @import "popover";
+// @import "carousel";
+// @import "spinners";
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/print";
+
+///////////////////// --------------------

@@ -1,0 +1,192 @@
+// cd C:\xampp\htdocs\conluiben\chat
+// sass --watch sass/trial2.scss:css/trial2.css
+@import "../node_modules/bootstrap/scss/bootstrap";
+$rcvdColor: #ffff66;
+$sentColor: #ccdcff;
+//////////////////// MIXINS
+
+@mixin justifyContent($sent){ //for msgFormat mixin
+	@if($sent){ //.divSentRow
+		@extend .justify-content-end;
+	}
+	@else{ //.divRcvdRow
+		@extend .justify-content-start;
+	}
+}
+@mixin fixOrder($sent,$sentFirst){ //for msgFormat mixin
+	@if ($sentFirst){
+		@if($sent){
+			@extend .order-0;
+		}
+		@else{
+			@extend .order-1;
+		}
+	}
+	@else{
+		@if($sent){
+			@extend .order-1;
+		}
+		@else{
+			@extend .order-0;
+		}
+	}
+}
+@mixin fixChatColor($sent){ //for msgFormat mixin
+	@if($sent){
+		background-color: $sentColor;
+	}
+	@else{ //.divRcvdRow
+		background-color: $rcvdColor;
+	}
+}
+@mixin forScreenSize($inpSize){ //inpSize is 2-letter size
+	@if $inpSize==sm {
+		@media (min-width: 576px) { @content; }
+	}
+	@else if $inpSize==md {
+		@media (min-width: 768px) { @content; }
+	}
+	@else if $inpSize==lg {
+		@media (min-width: 992px) { @content; }
+	}
+	@else if $inpSize==xl {
+		@media (min-width: 1200px) { @content; }
+	}
+}
+@mixin msgFormat($fromActive){ //.divRcvdRow or .divSentRow
+	@extend .d-flex,.py-2,.align-content-end;
+	@include justifyContent($fromActive);
+	img.imgDp{
+		@extend .align-self-end,.mx-2,.rounded-circle;
+		@include fixOrder($fromActive,false);
+		width: 40px;
+	}
+	div.divContent{
+		@extend .d-flex,.flex-column,.flex-grow-1;
+		@include fixOrder($fromActive,true);
+		div.divMsgDetails{
+			@extend .d-inline-flex;
+			@include justifyContent($fromActive);
+			small.msgName{
+				@extend .order-0,.mx-1;
+				font-style: italic;
+			}
+			small.msgTime{
+				@extend .order-1,.d-block,.d-lg-none;
+				font-style: italic;
+			}
+		}
+		div.divMsgBox{
+			@extend .d-flex;
+			@include justifyContent($fromActive);
+			div.msgText{
+				@extend .p-2;
+				@include fixOrder($fromActive,false);
+				@include fixChatColor($fromActive);
+				max-width: 85%; //TODO: media query screen
+				@include forScreenSize(sm){max-width: 70%;}
+				@include forScreenSize(md){max-width: 60%;}
+				@include forScreenSize(lg){max-width: 50%;}
+				@include forScreenSize(xl){max-width: 40%;}
+			}
+			small.timeText{
+				@extend .px-3,.align-self-center,.d-none,.d-lg-block;
+				@include fixOrder($fromActive,true);
+				font-style: initial;
+			}
+		}
+	}
+	small{
+		font-size: 0.75em;
+		color: gray;
+	}
+}
+
+///////////////////////////
+//////////////////// ALL CUSTOM CSS STYLES
+
+div.container{ //main body
+	@extend .d-flex,.flex-column;
+	max-height: 80vh;
+	@include forScreenSize(md){max-height: 90vh;}
+	@include forScreenSize(lg){max-height: 100vh;}
+	
+	div.divAllMsgsBox{
+		@extend .flex-grow-1;
+		overflow-y: scroll;
+		
+		div.divSentRow{
+			@include msgFormat(true);
+		}
+		div.divRcvdRow{
+			@include msgFormat(false);
+		}
+	}
+	h1{
+		font-size: 7vw;
+		@include forScreenSize(sm){font-size:6vw;};
+		@include forScreenSize(md){font-size:5vw;};
+		@include forScreenSize(lg){font-size:4vw;};
+		@include forScreenSize(xl){font-size:3vw;};
+	}
+	p{
+		margin: 0;
+	}
+	div.divInputArea{
+		@extend .p-3,.bg-light;
+		label{
+			@extend .d-inline-block,.d-lg-none;
+			color: gray;
+			font-style: italic;
+			
+			span.labelUname{
+				font-weight: bold;
+			}
+		}
+		div.divInputField{
+			@extend .input-group,.input-group-lg,.mb-3;
+			
+			div.divUnamePrepend{ //div only on large screens
+				@extend .input-group-prepend,.d-none,.d-lg-inline;
+				span { @extend .input-group-text; }
+			}
+			input#inpMsgField{
+				@extend .form-control;
+			}
+			div.divUnameAppend{
+				@extend .input-group-append;
+				button{
+					@extend .btn,.btn-success;
+					span{ //"Send"
+						@extend .mr-2,.d-none,.d-md-inline;
+					}
+				}
+			}
+		}
+	}
+}
+
+//////////////////////////////////////////
+////////// scrollbar styles
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 79, 153);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 53, 102);
+}
+
+///////////////////////////
